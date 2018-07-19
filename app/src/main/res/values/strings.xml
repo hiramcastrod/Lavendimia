@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lavendimia</string>
+    <string name="tabSales">Ventas</string>
+    <string name="clientTab">Clientes</string>
+    <string name="articleTab">Muebles</string>
+    <string name="configTab">Configuracion</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
