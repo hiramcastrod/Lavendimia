@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/groupSup"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/salesItem"
+            android:title="@string/tabSales"
+            />
+        <item
+            android:id="@+id/clientsItem"
+            android:title="@string/clientTab"
+            />
+        <item
+            android:id="@+id/articlesItem"
+            android:title="@string/articleTab"
+            />
+        <item
+            android:id="@+id/configItem"
+            android:title="@string/configTab"
+            />
+    </group>
+</menu>

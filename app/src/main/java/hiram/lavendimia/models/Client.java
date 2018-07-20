@@ -1,22 +1,21 @@
 package hiram.lavendimia.models;
 
 public class Client {
-    private int client_id;
+    private String client_id;
     private String name, lastname, rfc;
 
-    public Client(int client_id, String name, String lastname, String rfc) {
+    public Client(String client_id, String name, String lastname, String rfc) {
         this.client_id = client_id;
         this.name = name;
         this.lastname = lastname;
         this.rfc = rfc;
     }
 
-    public int getClient_id() {
-        return client_id;
+    public Client() {
     }
 
-    public void setClient_id(int client_id) {
-        this.client_id = client_id;
+    public String getClient_id() {
+        return client_id;
     }
 
     public String getName() {
