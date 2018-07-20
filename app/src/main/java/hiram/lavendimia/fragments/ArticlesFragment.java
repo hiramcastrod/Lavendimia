@@ -53,25 +53,26 @@ public class ArticlesFragment extends Fragment {
         Muebles = FirebaseDatabase.getInstance().getReference("Ventas");
         fabNewArticle = view.findViewById(R.id.fab_add_article);
         rvArticles = view.findViewById(R.id.recyclerview_articles);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        Muebles.keepSynced(true);
+        rvArticles.setLayoutManager(linearLayoutManager);
+       // ArticleAdapter articleAdapter = new ArticleAdapter(buidSales(), R.layout.articles_view_holder, getActivity());
+       // rvArticles.setAdapter(articleAdapter);
+        fabNewArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), NewArticleActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
-      /*  Muebles.child("Muebles").addChildEventListener(new ChildEventListener() {
+        Muebles.child("Muebles").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                ArrayList<Article> articlesList = new ArrayList<>();
-                for(DataSnapshot post : dataSnapshot.getChildren()) {
-                    System.out.println(post.child("product_id"));
-                    //Article article = post.getValue(Article.class);
-                    //articlesList.add(new Article(post.child("product_id").toString(), Integer.parseInt(post.child("stock").toString()), post.child("description").toString(),
-                    //        post.child("model").toString(), Float.parseFloat(post.child("price").toString())));
-                    System.out.print("ENTRO: " + articlesList);
-                }
-
-                ArticleAdapter articleAdapter = new ArticleAdapter(articlesList, R.layout.articles_view_holder, getActivity());
-                rvArticles.setAdapter(articleAdapter);
+                dataSnapshot.getValue();
+                System.out.println(dataSnapshot.getClass());
             }
 
             @Override
@@ -93,15 +94,21 @@ public class ArticlesFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });*/
+        });
 
       Muebles.child("Muebles").addValueEventListener(new ValueEventListener() {
           @Override
           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
               ArrayList<Article> articles = new ArrayList<>();
-              GenericTypeIndicator<ArrayList<Article>> t = new GenericTypeIndicator<ArrayList<Article>>();
-              articles = dataSnapshot.getValue(t);
-              System.out.print(articles);
+              for(DataSnapshot post: dataSnapshot.getChildren()){
+                  Article article = post.getValue(Article.class);
+                  articles.add(new Article(article.getProduct_id(), article.getStock(),
+                          article.getDescription(), article.getModel(), article.getPrice()));
+                  System.out.print("ENTRO: " + articles);
+              }
+              ArticleAdapter articleAdapter = new ArticleAdapter(articles, R.layout.articles_view_holder, getActivity());
+              rvArticles.setAdapter(articleAdapter);
+              System.out.print("ENTRO: " + articles);
           }
 
           @Override
@@ -113,6 +120,15 @@ public class ArticlesFragment extends Fragment {
 
         return view;
     }
+
+/*    public ArrayList<Article> buidSales(){
+        ArrayList<Article> articles = new ArrayList<>();
+        articles.add(new Article("id_1",200,"XX","xxx", 300));
+        articles.add(new Article("id_1",200,"XX","xxx", 300));
+        articles.add(new Article("id_1",200,"XX","xxx", 300));
+        articles.add(new Article("id_1",200,"XX","xxx", 300));
+        return articles;
+    }*/
 
     @Override
     public void onStart() {

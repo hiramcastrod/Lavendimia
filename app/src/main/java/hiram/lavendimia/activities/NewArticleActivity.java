@@ -60,10 +60,11 @@ public class NewArticleActivity extends AppCompatActivity {
             Article articles = new Article(id, stock, description, model, price);
             Muebles.child("Muebles").child(id).setValue(articles);
             Toast.makeText(this, "Articulo registrado", Toast.LENGTH_SHORT).show();
-            inputStock.setText("");
-            inputModel.setText("");
-            inputDescription.setText("");
-            inputPrice.setText("");
+            //inputStock.setText("");
+            //inputModel.setText("");
+            //inputDescription.setText("");
+            //inputPrice.setText("");
+            finish();
         } else {
             Toast.makeText(this, "Faltan campos", Toast.LENGTH_SHORT).show();
         }

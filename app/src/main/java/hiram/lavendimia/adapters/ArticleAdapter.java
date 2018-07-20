@@ -38,7 +38,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
         //GETS
         holder.modelCard.setText(article.getModel());
-        holder.stockCard.setText(article.getStock());
+        holder.stockCard.setText(Integer.toString(article.getStock()));
         holder.priceCard.setText(String.valueOf(article.getPrice()));
         holder.descriptionCard.setText(article.getDescription());
     }
