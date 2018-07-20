@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.NewClientActivity">
+<LinearLayout
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        >
+    <LinearLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:gravity="center"
+            android:layout_weight=".25"
+            android:textSize="@dimen/textForm"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lastname"
+            android:gravity="center"
+            android:layout_weight=".25"
+            android:textSize="@dimen/textForm"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rfc"
+            android:gravity="center"
+            android:layout_weight=".25"
+            android:textSize="@dimen/textForm"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        >
+        <EditText
+            android:hint="Inserta nombre"
+            android:id="@+id/edittext_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight=".25"
+            android:textSize="@dimen/textForm"
+            />
+        <EditText
+            android:hint="Inserta apellido"
+            android:id="@+id/edittext_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight=".25"
+            android:textSize="@dimen/textForm"
+            />
+        <EditText
+            android:hint="Inserta RFC"
+            android:id="@+id/edittext_rfc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight=".25"
+            android:textSize="@dimen/textForm"
+            />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:weightSum="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/button_accept"
+        android:layout_weight=".5"
+        android:text="@string/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        />
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_weight=".5"
+        android:text="@string/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        />
+    </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
