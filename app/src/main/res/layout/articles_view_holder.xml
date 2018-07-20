@@ -22,6 +22,12 @@
             android:layout_height="100dp" />
 
         <LinearLayout
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight=".2"
             android:layout_marginLeft="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,6 +65,19 @@
                 android:text="Stock"
                 android:textSize="12dp"
                 />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imagebutton_action_article"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_clear"
+                    />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
