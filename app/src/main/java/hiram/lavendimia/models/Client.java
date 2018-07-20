@@ -11,6 +11,9 @@ public class Client {
         this.rfc = rfc;
     }
 
+    public Client() {
+    }
+
     public String getClient_id() {
         return client_id;
     }
