@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+    <TextView
+        android:id="@+id/tv_model_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".3"
+        android:text="Modelo"
+        />
+    <TextView
+        android:id="@+id/tv_quantity_card"
+        android:layout_weight=".1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad"
+        />
+    <TextView
+        android:id="@+id/tv_price_card"
+        android:layout_weight=".3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio"/>
+    <TextView
+        android:id="@+id/tv_amount_card"
+        android:layout_weight=".3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Importe"
+        />
+
+
+</LinearLayout>
+</android.support.v7.widget.CardView>

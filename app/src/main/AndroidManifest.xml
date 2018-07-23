@@ -17,7 +17,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.NewClientActivity" />
-        <activity android:name=".activities.NewArticleActivity"></activity>
+        <activity android:name=".activities.NewArticleActivity" />
+        <activity
+            android:name=".activities.SelectClientActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".activities.SelectProductsActivity" />
+        <activity
+            android:name=".activities.QuantityProductsActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".activities.ShoppingCartActivity" />
+        <activity android:name=".activities.FinalizeSaleActivity" />
+        <activity android:name=".activities.SelectMonthActivity"></activity>
     </application>
 
 </manifest>

@@ -1,11 +1,11 @@
 package hiram.lavendimia.models;
 
 public class Sale {
-    private int id_sale, id_client, status;
+    private int status;
     private float total;
-    private String date, client_name;
+    private String id_sale, id_client, date, client_name;
 
-    public Sale(int id_sale, int id_client, int status, float total, String date, String client_name) {
+    public Sale(String id_sale, String id_client, int status, float total, String date, String client_name) {
         this.id_sale = id_sale;
         this.id_client = id_client;
         this.status = status;
@@ -14,20 +14,15 @@ public class Sale {
         this.client_name = client_name;
     }
 
-    public int getId_sale() {
+    public Sale() {
+    }
+
+    public String getId_sale() {
         return id_sale;
     }
 
-    public void setId_sale(int id_sale) {
-        this.id_sale = id_sale;
-    }
-
-    public int getId_client() {
+    public String getId_client() {
         return id_client;
-    }
-
-    public void setId_client(int id_client) {
-        this.id_client = id_client;
     }
 
     public int getStatus() {

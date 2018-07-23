@@ -9,20 +9,20 @@
     >
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview_sale"
+        android:id="@+id/recyclerview_select_products"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/sales_view_holder"
+        tools:listitem="@layout/articles_view_holder"
         />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_add_sale"
+        android:id="@+id/fab_select_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="@dimen/general_padding"
         android:layout_marginRight="@dimen/general_padding"
-        app:srcCompat="@drawable/ic_add"
+        app:srcCompat="@drawable/ic_send"
         />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -67,8 +67,7 @@ public class ArticlesFragment extends Fragment {
             }
         });
 
-
-        Muebles.child("Muebles").addChildEventListener(new ChildEventListener() {
+      Muebles.child("Muebles").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 dataSnapshot.getValue();
@@ -104,11 +103,10 @@ public class ArticlesFragment extends Fragment {
                   Article article = post.getValue(Article.class);
                   articles.add(new Article(article.getProduct_id(), article.getStock(),
                           article.getDescription(), article.getModel(), article.getPrice()));
-                  System.out.print("ENTRO: " + articles);
               }
               ArticleAdapter articleAdapter = new ArticleAdapter(articles, R.layout.articles_view_holder, getActivity());
               rvArticles.setAdapter(articleAdapter);
-              System.out.print("ENTRO: " + articles);
+              System.out.print("ENTRO: " + articles.get(1));
           }
 
           @Override

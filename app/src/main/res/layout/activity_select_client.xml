@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SelectClientActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:text="Selecciona cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinner_clients"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        >
+    </Spinner>
+
+
+    <Button
+        android:id="@+id/button_accept_selectclient"
+        android:text="Aceptar"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_cance_selectclient"
+        android:text="Cancelar"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
