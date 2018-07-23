@@ -22,7 +22,10 @@
             android:name=".activities.SelectClientActivity"
             android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".activities.SelectProductsActivity" />
-        <activity android:name=".activities.QuantityProductsActivity"></activity>
+        <activity
+            android:name=".activities.QuantityProductsActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".activities.ShoppingCartActivity"></activity>
     </application>
 
 </manifest>
