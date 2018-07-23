@@ -25,7 +25,8 @@
         <activity
             android:name=".activities.QuantityProductsActivity"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".activities.ShoppingCartActivity"></activity>
+        <activity android:name=".activities.ShoppingCartActivity" />
+        <activity android:name=".activities.FinalizeSaleActivity"></activity>
     </application>
 
 </manifest>

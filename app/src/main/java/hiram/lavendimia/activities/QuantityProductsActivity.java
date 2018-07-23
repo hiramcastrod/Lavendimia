@@ -1,6 +1,7 @@
 package hiram.lavendimia.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -13,9 +14,14 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import hiram.lavendimia.R;
+import hiram.lavendimia.models.Cart;
 
 public class QuantityProductsActivity extends AppCompatActivity {
     TextView tvPrice, tvAmount, tvModel;
@@ -23,7 +29,8 @@ public class QuantityProductsActivity extends AppCompatActivity {
     Button btAccept, btCancel;
     double price;
     double priceUnit;
-    ArrayList<>
+    ArrayList<Cart> cartList;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,8 @@ public class QuantityProductsActivity extends AppCompatActivity {
         spinQty = findViewById(R.id.spinner_quantity);
         btAccept = findViewById(R.id.button_accept_quantity);
         btCancel = findViewById(R.id.button_cancel_quantity);
+        sharedPreferences = getSharedPreferences("Data-Vault", MODE_PRIVATE);
+        getCartList();
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -88,12 +97,33 @@ public class QuantityProductsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                // Intent intent = new Intent(getApplicationContext(), ShoppingCartActivity.class);
-
+                addToCart();
             }
         });
     }
 
     public void addToCart(){
+        cartList.add(new Cart(tvModel.getText().toString(),
+                (int)spinQty.getSelectedItem(), priceUnit, price));
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(cartList);
+        editor.putString("cart list", json);
+        editor.apply();
+        for(int i = 0; i<cartList.size(); i++){
+            System.out.println(cartList.get(i).getModel());
+        }
+    }
 
+    public ArrayList<Cart> getCartList() {
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("cart list", null);
+        Type type = new TypeToken<ArrayList<Cart>>() {}.getType();
+        cartList = gson.fromJson(json, type);
+
+        if (cartList == null){
+            cartList = new ArrayList<>();
+        }
+        return cartList;
     }
 }

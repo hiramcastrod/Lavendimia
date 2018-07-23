@@ -1,7 +1,9 @@
 package hiram.lavendimia.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -26,6 +28,10 @@ public class SalesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_sales, container, false);
         fabNewSale = view.findViewById(R.id.fab_add_sale);
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("Data-Vault", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
 
         fabNewSale.setOnClickListener(new View.OnClickListener() {
             @Override
