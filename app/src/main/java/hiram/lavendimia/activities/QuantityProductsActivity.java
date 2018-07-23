@@ -70,10 +70,10 @@ public class QuantityProductsActivity extends AppCompatActivity {
         spinQty.setAdapter(adapter);
         spinQty.setSelection(1);
         priceUnit = extras.getFloat("PRICE");
-        priceUnit = priceUnit * (1 + (2.8 * 12)/100);
-        tvPrice.setText(" "+ (float)priceUnit);
-        price = priceUnit * (int)spinQty.getSelectedItem();
-        tvAmount.setText(""+(float) price);
+        priceUnit =(int) priceUnit * (1 + (2.8 * 12)/100);
+        tvPrice.setText(" "+ (int)priceUnit);
+        price =(int) priceUnit * (int)spinQty.getSelectedItem();
+        tvAmount.setText(""+(int) price);
         spinQty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -113,6 +113,7 @@ public class QuantityProductsActivity extends AppCompatActivity {
         for(int i = 0; i<cartList.size(); i++){
             System.out.println(cartList.get(i).getModel());
         }
+        finish();
     }
 
     public ArrayList<Cart> getCartList() {
