@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/list_padding"
+        android:gravity="center"
+        >
+
+    <LinearLayout
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_weight=".2"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:id="@+id/textview_client_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cliente"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:text="Total:  $"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <TextView
+            android:id="@+id/textview_total_sale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textSize="15dp"
+            android:paddingRight="@dimen/general_padding"
+            />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha"
+            android:textSize="12dp"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="ID de venta: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/textview_id_sale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="id Venta"
+            android:textSize="12dp"
+            />
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

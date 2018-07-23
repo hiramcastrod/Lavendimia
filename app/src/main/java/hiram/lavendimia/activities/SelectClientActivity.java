@@ -115,10 +115,12 @@ public class SelectClientActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Client Position", Integer.toString(positionClient));
-                editor.putString("Client Name", selectedClient);
+                editor.putString("client position", Integer.toString(positionClient));
+                editor.putString("client name", selectedClient);
+                editor.apply();
                 Intent intent = new Intent(getApplicationContext(), SelectProductsActivity.class);
                 startActivity(intent);
+                //Toast.makeText(SelectClientActivity.this, "Cliente seleccionado: " selectedClient, Toast.LENGTH_SHORT).show();
             }
         });
         btCancelSelectClient.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +134,6 @@ public class SelectClientActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selectedClient =(String)adapterView.getItemAtPosition(i);
                 positionClient = i;
-                Toast.makeText(SelectClientActivity.this, "Cliente seleccionado: "+ selectedClient, Toast.LENGTH_SHORT).show();
             }
 
             @Override

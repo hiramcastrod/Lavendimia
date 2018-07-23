@@ -1,5 +1,6 @@
 package hiram.lavendimia.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,7 +49,11 @@ public class FinalizeSaleActivity extends AppCompatActivity {
         btProceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                Intent intent = new Intent(getApplicationContext(), SelectMonthActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putFloat("TOTAL", total);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
