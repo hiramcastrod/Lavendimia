@@ -1,5 +1,6 @@
 package hiram.lavendimia.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -46,7 +47,6 @@ public class SelectClientActivity extends AppCompatActivity {
         btCancelSelectClient = findViewById(R.id.button_cance_selectclient);
         Clients = FirebaseDatabase.getInstance().getReference("Ventas");
         sharedPreferences = getSharedPreferences("Data-Vault", MODE_PRIVATE);
-        selectedClient = (String)spinSelectClient.getSelectedItem();
         DisplayMetrics displayMetrics =  new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
@@ -117,7 +117,8 @@ public class SelectClientActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("Client Position", Integer.toString(positionClient));
                 editor.putString("Client Name", selectedClient);
-                //Toast.makeText(SelectClientActivity.this, positionClient + selectedClient, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), SelectProductsActivity.class);
+                startActivity(intent);
             }
         });
         btCancelSelectClient.setOnClickListener(new View.OnClickListener() {
@@ -131,11 +132,12 @@ public class SelectClientActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selectedClient =(String)adapterView.getItemAtPosition(i);
                 positionClient = i;
+                Toast.makeText(SelectClientActivity.this, "Cliente seleccionado: "+ selectedClient, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                selectedClient = (String)spinSelectClient.getSelectedItem();
             }
         });
 
